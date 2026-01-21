@@ -662,9 +662,23 @@
                         </h2>
                         <p style="color: rgba(255,255,255,0.7);">PT. Triglobalindo Berkat Utama. General Contractor,
                             Supplier & Fabrication delivering excellence since 2014.</p>
+
                         <ul class="ftco-footer-social list-unstyled mt-4">
-                            <li><a href="https://instagram.com/triglobalindo.id"><span
-                                        class="fab fa-instagram"></span></a></li>
+                            <li>
+                                <a href="https://instagram.com/triglobalindo.id" target="_blank" title="Instagram">
+                                    <span class="fab fa-instagram"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/6281218087689" target="_blank" title="WhatsApp">
+                                    <span class="fab fa-whatsapp"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:tbugrup@gmail.com" title="Email">
+                                    <span class="fas fa-envelope"></span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -686,29 +700,19 @@
                         <div class="map-container mb-4"
                             style="border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.058341496388!2d106.9715563147693!3d-6.256037995471469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698c4f94a48cd7%3A0x6c6e3d2b2b2b2b2b!2sRuko%20Grand%20Galaxy%20City!5e0!3m2!1sid!2sid!4v1679821234567!5m2!1sid!2sid"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.036873641324!2d106.9746399!3d-6.2588729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d0020f5c945%3A0x123456789abc!2sRuko%20Grand%20Galaxy%20City!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
                                 width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li>
-                                    <span class="icon fas fa-map-marker-alt"></span>
-                                    <span class="text">Ruko Grand Galaxy City, Jl. Pulo Sirih Barat Raya Blok RSN
-                                        No.68, Jaka Setia, Bekasi Selatan.</span>
-                                </li>
-                                <li>
-                                    <a href="tel:081218087689">
-                                        <span class="icon fas fa-phone"></span>
-                                        <span class="text">0812-1808-7689</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="mailto:tbugrup@gmail.com">
-                                        <span class="icon fas fa-envelope"></span>
-                                        <span class="text">tbugrup@gmail.com</span>
-                                    </a>
-                                </li>
+                                <li><span class="icon fas fa-map-marker-alt"></span><span class="text">Ruko Grand
+                                        Galaxy City, Jl. Pulo Sirih Barat Raya Blok RSN No.68, Jaka Setia, Bekasi
+                                        Selatan.</span></li>
+                                <li><a href="tel:081218087689"><span class="icon fas fa-phone"></span><span
+                                            class="text">0812-1808-7689</span></a></li>
+                                <li><a href="mailto:tbugrup@gmail.com"><span class="icon fas fa-envelope"></span><span
+                                            class="text">tbugrup@gmail.com</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -719,8 +723,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center py-3">
-                        <p class="mb-0 text-white-50" style="font-size: 12px;">
-                            Copyright ©
+                        <p class="mb-0 text-white-50" style="font-size: 12px;">Copyright ©
                             <script>
                                 document.write(new Date().getFullYear());
                             </script> All rights reserved | PT. Triglobalindo Berkat Utama

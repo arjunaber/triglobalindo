@@ -603,9 +603,23 @@
                         </h2>
                         <p style="color: rgba(255,255,255,0.7);">PT. Triglobalindo Berkat Utama. General Contractor,
                             Supplier & Fabrication delivering excellence since 2014.</p>
+
                         <ul class="ftco-footer-social list-unstyled mt-4">
-                            <li><a href="https://instagram.com/triglobalindo.id"><span
-                                        class="fab fa-instagram"></span></a></li>
+                            <li>
+                                <a href="https://instagram.com/triglobalindo.id" target="_blank" title="Instagram">
+                                    <span class="fab fa-instagram"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/6281218087689" target="_blank" title="WhatsApp">
+                                    <span class="fab fa-whatsapp"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:tbugrup@gmail.com" title="Email">
+                                    <span class="fas fa-envelope"></span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -701,14 +715,13 @@
 
         // --- SCRIPT FORM KE GOOGLE SHEETS DENGAN SUCCESS SCREEN ---
         const scriptURL =
-            'https://script.google.com/macros/s/AKfycbzDrYgEIEQ9SOLLjmV6LmSmhCuDrkbRIFxkcUscYgfP1pBJTijenPvdbs_PPdodpHXj/exec';
+            'https://script.google.com/macros/s/AKfycbyXVcfAGB3CWxiSoT6lxmdpRRnxDYCfNLbUf5O84-MJlc5EYmG88qTqTLmIOD6T1NuS/exec';
 
         const form = document.forms['submit-to-google-sheet'];
-        const btnKirim = document.querySelector('.btn-submit');
+        const btnSubmit = document.querySelector('.btn-submit');
         const btnLoading = document.querySelector('.spinner-border');
         const myAlertError = document.querySelector('.my-alert-error');
 
-        // Element Kontainer
         const formContainer = document.getElementById('form-container');
         const successContainer = document.getElementById('success-container');
         const countdownElement = document.getElementById('countdown');
@@ -717,25 +730,25 @@
             form.addEventListener('submit', e => {
                 e.preventDefault();
 
-                // 1. Tampilkan Loading, Sembunyikan Alert Error jika ada
+                // 1. Tampilkan Loading
                 btnLoading.style.display = "inline-block";
-                myAlertError.classList.add('d-none');
+                myAlertError.classList.add('d-none'); // Sembunyikan error lama
 
                 fetch(scriptURL, {
                         method: 'POST',
                         body: new FormData(form)
                     })
                     .then(response => {
-                        // 2. Berhasil Terkirim
+                        // 2. Berhasil
                         btnLoading.style.display = "none";
                         form.reset();
                         console.log('Success!', response);
 
-                        // 3. Sembunyikan Form, Tampilkan Pesan Sukses
+                        // 3. Ganti Tampilan ke Pesan Sukses
                         formContainer.style.display = "none";
-                        successContainer.style.display = "flex"; // Gunakan Flex agar terpusat
+                        successContainer.style.display = "flex";
 
-                        // 4. Mulai Countdown 5 Detik
+                        // 4. Hitung Mundur 5 Detik
                         let timeLeft = 5;
                         countdownElement.innerText = timeLeft;
 
@@ -745,14 +758,14 @@
 
                             if (timeLeft <= 0) {
                                 clearInterval(timer);
-                                // 5. Kembalikan ke Tampilan Form
+                                // 5. Kembalikan Form
                                 successContainer.style.display = "none";
                                 formContainer.style.display = "block";
                             }
                         }, 1000);
                     })
                     .catch(error => {
-                        // Gagal
+                        // 3. Gagal
                         btnLoading.style.display = "none";
                         myAlertError.classList.remove('d-none');
                         console.error('Error!', error.message);
