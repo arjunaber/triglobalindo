@@ -715,7 +715,7 @@
 
         // --- SCRIPT FORM KE GOOGLE SHEETS DENGAN SUCCESS SCREEN ---
         const scriptURL =
-            'https://script.google.com/macros/s/AKfycbyXVcfAGB3CWxiSoT6lxmdpRRnxDYCfNLbUf5O84-MJlc5EYmG88qTqTLmIOD6T1NuS/exec';
+            'https://script.google.com/macros/s/AKfycbwgRAmRD53vY5bfYtMFCjXt_ph8ezO57lTTKglY59UJx4AYAyjO7A0vWywqLqo7v9Gk/exec';
 
         const form = document.forms['submit-to-google-sheet'];
         const btnSubmit = document.querySelector('.btn-submit');
