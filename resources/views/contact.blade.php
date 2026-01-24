@@ -6,8 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
@@ -45,6 +43,7 @@
         }
 
         /* --- NAVBAR STYLES --- */
+        /* --- NAVBAR STYLES (DIPERBAIKI) --- */
         #ftco-navbar {
             background: transparent !important;
             position: fixed;
@@ -52,34 +51,106 @@
             z-index: 1030;
             width: 100%;
             padding: 0;
+            overflow: visible !important;
+            /* PENTING: Agar dropdown tidak terpotong */
         }
 
         .navbar-full-width {
             width: 100%;
-            padding: 5px 5%;
+            padding-left: 5%;
+            padding-right: 5%;
             background: #153E80;
-            transition: 0.4s ease;
+            transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            position: relative;
+            /* PENTING: Untuk stacking context */
+            z-index: 1031;
+            /* PENTING: Agar selalu di atas */
         }
 
         #ftco-navbar.scrolled-nav .navbar-full-width {
-            background: rgba(21, 62, 128, 0.95) !important;
-            backdrop-filter: blur(15px);
+            background: rgba(37, 86, 166, 0.95) !important;
+            backdrop-filter: blur(10px);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            padding: 0 5%;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-collapse {
+            overflow: visible !important;
+            /* PENTING */
+        }
+
+        .dropdown-menu {
+            border-top: 3px solid var(--brand-light-blue);
+            background-color: #ffffff;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: none;
+            padding: 0;
+            min-width: 220px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 99999 !important;
+            /* PENTING: Agar dropdown di atas segalanya */
+            display: block;
+            visibility: hidden;
+            /* Animasi hidden */
+            opacity: 0;
+            /* Animasi transparan */
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-menu.show {
+            visibility: visible;
+            /* Munculkan saat ada class show */
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            color: var(--text-color);
+            padding: 12px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: var(--brand-dark-blue);
+            padding-left: 25px;
+        }
+
+        .ftco-navbar-light .navbar-nav>.nav-item>.nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500 !important;
+            font-size: 14px;
+            padding: 25px 15px;
+            /* Padding disesuaikan agar rapi */
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .ftco-navbar-light .navbar-nav>.nav-item>.nav-link:hover,
+        .ftco-navbar-light .navbar-nav>.nav-item.active>.nav-link {
+            color: #ffffff !important;
         }
 
         .navbar-brand-custom {
             display: flex;
             align-items: center;
-            padding: 10px 0;
-            color: #fff;
             text-decoration: none !important;
+            padding: 10px 0;
         }
 
         .logo-box-nav {
             width: 45px;
             height: 45px;
-            background: #fff;
+            background: #ffffff;
             color: var(--brand-dark-blue);
             display: flex;
             align-items: center;
@@ -87,6 +158,7 @@
             font-weight: 800;
             border-radius: 4px;
             margin-right: 12px;
+            font-size: 16px;
         }
 
         .logo-text-nav {
@@ -98,78 +170,62 @@
         .logo-title {
             font-size: 18px;
             font-weight: 700;
-            color: #fff;
+            color: #ffffff;
         }
 
         .logo-subtitle {
             font-size: 11px;
+            letter-spacing: 1px;
             color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
         }
 
-        .nav-link {
-            color: rgba(255, 255, 255, 0.8) !important;
-            font-weight: 500;
-            font-size: 14px;
-            padding: 25px 15px !important;
-        }
-
-        .nav-link:hover,
-        .nav-item.active .nav-link {
-            color: #fff !important;
-        }
-
         .nav-cta-btn {
-            background: var(--brand-light-blue) !important;
-            color: #fff !important;
+            background-color: var(--brand-light-blue) !important;
+            color: #ffffff !important;
             border-radius: 4px;
             padding: 8px 25px !important;
             border: 1px solid var(--brand-light-blue);
+            transition: all 0.3s;
             margin-left: 15px;
+            /* Pastikan margin ada */
         }
 
         .nav-cta-btn:hover {
-            background: transparent !important;
-            border-color: #fff;
-        }
-
-        .dropdown-menu {
-            border-top: 3px solid var(--brand-light-blue);
-            border-radius: 0 0 4px 4px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            border: none;
-        }
-
-        .dropdown-item {
-            padding: 10px 20px;
-            font-size: 14px;
-        }
-
-        .dropdown-item:hover {
-            background: #f8f9fa;
-            color: var(--brand-dark-blue);
-            padding-left: 25px;
-            transition: 0.2s;
+            background-color: transparent !important;
+            border: 1px solid #ffffff;
         }
 
         .navbar-toggler .fa-bars {
-            color: #fff;
+            color: #ffffff !important;
             font-size: 24px;
         }
 
         .top {
-            background: #fff;
+            background-color: #fff;
             font-size: 13px;
         }
 
         @media (max-width: 991.98px) {
             .navbar-full-width {
-                padding: 5px 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .nav-cta-btn {
+                margin-left: 0;
+                margin-top: 10px;
+                display: inline-block;
             }
 
             .dropdown-menu {
                 position: static;
                 background: rgba(255, 255, 255, 0.05);
+                display: none;
+            }
+
+            .dropdown-menu.show {
+                display: block;
             }
 
             .dropdown-item {
@@ -453,6 +509,17 @@
 
         <section class="contact-info-wrap ftco-no-pb">
             <div class="container">
+                <div class="row justify-content-center mb-5 ftco-animate">
+                    <div class="col-md-10 text-center bg-white p-4 rounded shadow-sm" style="margin-top: -50px;">
+                        <p class="lead mb-0" style="color: #444; font-size: 16px;">
+                            Untuk informasi lebih lanjut, konsultasi proyek, atau kebutuhan kerja sama, silakan
+                            menghubungi
+                            PT Triglobalindo Berkat Utama melalui kontak berikut. Tim kami siap membantu dan memberikan
+                            solusi terbaik sesuai dengan kebutuhan Anda.
+                        </p>
+                    </div>
+                </div>
+
                 <div class="row mb-5">
 
                     <div class="col-md-3 d-flex align-items-stretch ftco-animate">
@@ -462,7 +529,7 @@
                             <div class="icon-box"><span class="fa fa-map-marker-alt"></span></div>
                             <h3 class="contact-title">Alamat Kantor</h3>
                             <p class="contact-text">Ruko Grand Galaxy City, Jl. Pulo Sirih Barat Raya Blok RSN No.68,
-                                Bekasi.</p>
+                                Jaka Setia, Kec. Bekasi Selatan, Kota Bekasi, Jawa Barat</p>
                         </div>
                     </div>
 
@@ -511,9 +578,9 @@
                     <div class="col-md-6 d-flex align-items-stretch ftco-animate">
                         <div class="map-wrap w-100">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.036873641324!2d106.9746399!3d-6.2588729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d0020f5c945%3A0x123456789abc!2sRuko%20Grand%20Galaxy%20City!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.9080680438046!2d106.97074007481041!3d-6.275817061433529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d0058e5e349%3A0xbc1aa63753554454!2sPT%20Triglobalindo%20Berkat%20Utama!5e0!3m2!1sid!2sid!4v1769259512104!5m2!1sid!2sid"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
 
@@ -523,8 +590,9 @@
                             <div id="form-container">
                                 <h3 class="mb-4" style="color: var(--brand-dark-blue); font-weight: 700;">Kirim
                                     Pesan</h3>
-                                <p class="mb-4" style="color: #666;">Isi formulir ini, pesan Anda akan terkirim ke
-                                    tim kami via Email/Spreadsheet.</p>
+                                <p class="mb-4" style="color: #666;">Silakan hubungi kami melalui formulir kontak
+                                    yang
+                                    tersedia atau datang langsung ke kantor kami sesuai alamat di atas.</p>
 
                                 <form name="submit-to-google-sheet" id="contactForm">
                                     <div class="row">
@@ -640,16 +708,17 @@
                         <h2 class="ftco-heading-2 text-white">Contact Info</h2>
                         <div class="map-container mb-4"
                             style="border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.036873641324!2d106.9746399!3d-6.2588729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d0020f5c945%3A0x123456789abc!2sRuko%20Grand%20Galaxy%20City!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
-                                width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0"
+                                marginwidth="0"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.9080680438046!2d106.97074007481041!3d-6.275817061433529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d0058e5e349%3A0xbc1aa63753554454!2sPT%20Triglobalindo%20Berkat%20Utama!5e0!3m2!1sid!2sid!4v1769259512104!5m2!1sid!2sid">
+                            </iframe>
+
                         </div>
                         <div class="block-23 mb-3">
                             <ul>
                                 <li><span class="icon fas fa-map-marker-alt"></span><span class="text">Ruko Grand
-                                        Galaxy City, Jl. Pulo Sirih Barat Raya Blok RSN No.68, Jaka Setia, Bekasi
-                                        Selatan.</span></li>
+                                        Galaxy City, Jl. Pulo Sirih Barat Raya Blok RSN No.68, Jaka Setia, Kec. Bekasi
+                                        Selatan, Kota Bekasi, Jawa Barat.</span></li>
                                 <li><a href="tel:081218087689"><span class="icon fas fa-phone"></span><span
                                             class="text">0812-1808-7689</span></a></li>
                                 <li><a href="mailto:tbugrup@gmail.com"><span class="icon fas fa-envelope"></span><span
