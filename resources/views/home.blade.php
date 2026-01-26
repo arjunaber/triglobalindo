@@ -1001,9 +1001,8 @@
 
         $(window).on('load', function() {
             setTimeout(function() {
-                // Tambahkan class untuk fade out
                 $('#loader-wrapper').addClass('loader-hide');
-            }, 3000); // 3000ms = 3 Detik
+            }, 3000);
         });
     </script>
 
