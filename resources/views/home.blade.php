@@ -3,6 +3,8 @@
 
 <head>
     <title>PT. Triglobalindo Berkat Utama - Contractor & Supplier</title>
+    <link rel="icon" href="{{ asset('images/Logo TBU vers.02.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('images/Logo TBU vers.02.png') }}" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -479,13 +481,16 @@
         <div class="container-fluid px-lg-5 navbar-full-width">
 
             <a class="navbar-brand-custom" href="/">
-                <div class="logo-box-nav">TBU</div>
+                <div class="logo-box-nav"
+                    style="background-color: #ffffff; padding: 5px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <img src="{{ asset('images/Logo TBU vers.02.png') }}" alt="Logo TBU"
+                        style="max-height: 60px; width: auto; max-width: 100%;">
+                </div>
                 <div class="logo-text-nav">
                     <span class="logo-title">PT. TRIGLOBALINDO</span>
                     <span class="logo-subtitle">General Contractor</span>
                 </div>
             </a>
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fas fa-bars"></span>
@@ -589,7 +594,7 @@
                                         Waktu</span></li>
                             </ul>
 
-                            <p><a href="/about/data-perusahaan" class="btn btn-primary mt-3 px-4 py-3">Selengkapnya
+                            <p><a href="/about/profile-perusahaan" class="btn btn-primary mt-3 px-4 py-3">Selengkapnya
                                     Tentang TBU</a></p>
                         </div>
                     </div>
@@ -695,7 +700,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="stat-card-modern stat-card-1">
                                 <div class="stat-icon"><span class="flaticon-engineer"></span></div>
-                                <strong class="number stat-number" data-number="50">0</strong>
+                                <strong class="number stat-number" data-number="42">0</strong>
                                 <span class="stat-label">Total Proyek Selesai</span>
                             </div>
                         </div>
@@ -703,7 +708,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="stat-card-modern stat-card-2">
                                 <div class="stat-icon"><span class="flaticon-worker"></span></div>
-                                <strong class="number stat-number" data-number="20">0</strong>
+                                <strong class="number stat-number" data-number="27">0</strong>
                                 <span class="stat-label">Proyek Pemerintah</span>
                             </div>
                         </div>
@@ -711,16 +716,8 @@
                         <div class="col-md-6 mb-4">
                             <div class="stat-card-modern stat-card-3">
                                 <div class="stat-icon"><span class="flaticon-architect"></span></div>
-                                <strong class="number stat-number" data-number="30">0</strong>
-                                <span class="stat-label">Proyek Swasta</span>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-                            <div class="stat-card-modern stat-card-4">
-                                <div class="stat-icon"><span class="flaticon-engineer-1"></span></div>
                                 <strong class="number stat-number" data-number="15">0</strong>
-                                <span class="stat-label">Mitra & Klien Aktif</span>
+                                <span class="stat-label">Proyek Swasta</span>
                             </div>
                         </div>
 
@@ -835,7 +832,8 @@
                         <h2 class="ftco-heading-2 text-white">Quick Links</h2>
                         <ul class="list-unstyled">
                             <li><a href="/" class="py-2 d-block text-white-50">Home</a></li>
-                            <li><a href="/about" class="py-2 d-block text-white-50">About Us</a></li>
+                            <li><a href="/about/profile-perusahaan" class="py-2 d-block text-white-50">About Us</a>
+                            </li>
                             <li><a href="/services" class="py-2 d-block text-white-50">Services</a></li>
                             <li><a href="/project" class="py-2 d-block text-white-50">Projects</a></li>
                             <li><a href="/contact" class="py-2 d-block text-white-50">Contact Us</a></li>

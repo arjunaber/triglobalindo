@@ -3,6 +3,8 @@
 
 <head>
     <title>Visi & Misi - PT. Triglobalindo Berkat Utama</title>
+    <link rel="icon" href="{{ asset('images/Logo TBU vers.02.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('images/Logo TBU vers.02.png') }}" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -393,7 +395,11 @@
     <nav class="navbar navbar-expand-lg ftco-navbar-light" id="ftco-navbar">
         <div class="container-fluid px-lg-5 navbar-full-width">
             <a class="navbar-brand-custom" href="/">
-                <div class="logo-box-nav">TBU</div>
+                <div class="logo-box-nav"
+                    style="background-color: #ffffff; padding: 5px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <img src="{{ asset('images/Logo TBU vers.02.png') }}" alt="Logo TBU"
+                        style="max-height: 60px; width: auto; max-width: 100%;">
+                </div>
                 <div class="logo-text-nav">
                     <span class="logo-title">PT. TRIGLOBALINDO</span>
                     <span class="logo-subtitle">General Contractor</span>
@@ -564,7 +570,8 @@
                         <h2 class="ftco-heading-2 text-white">Quick Links</h2>
                         <ul class="list-unstyled">
                             <li><a href="/" class="py-2 d-block text-white-50">Home</a></li>
-                            <li><a href="/about" class="py-2 d-block text-white-50">About Us</a></li>
+                            <li><a href="/about/profile-perusahaan" class="py-2 d-block text-white-50">About Us</a>
+                            </li>
                             <li><a href="/services" class="py-2 d-block text-white-50">Services</a></li>
                             <li><a href="/project" class="py-2 d-block text-white-50">Projects</a></li>
                             <li><a href="/contact" class="py-2 d-block text-white-50">Contact Us</a></li>
