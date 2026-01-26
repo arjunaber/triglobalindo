@@ -22,6 +22,55 @@
 
     <style>
         /* --- CUSTOM TBU THEME BY ARJUNA --- */
+
+        /* --- LOADING SCREEN STYLE --- */
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            /* Harus paling atas menutupi navbar */
+            background-color: #FBFBF3;
+            /* Warna sesuai request */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.6s ease-out;
+            /* Efek transisi saat menghilang */
+        }
+
+        .loader-logo {
+            width: 500px;
+            /* Ukuran Besar */
+            height: auto;
+            /* Animasi Kelap Kelip (Pulse) */
+            animation: pulse-effect 1s infinite ease-in-out alternate;
+        }
+
+        /* Keyframe untuk efek kelap-kelip halus */
+        @keyframes pulse-effect {
+            0% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 10px rgba(21, 62, 128, 0.3));
+            }
+        }
+
+        /* Class untuk menyembunyikan loader */
+        .loader-hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            /* Agar bisa klik elemen di belakangnya */
+        }
+
         :root {
             --brand-dark-blue: #153E80;
             /* Primary Corporate */
@@ -452,6 +501,9 @@
 </head>
 
 <body>
+    <div id="loader-wrapper">
+        <img src="{{ asset('images/Logo TBU vers.02.png') }}" alt="Loading TBU" class="loader-logo">
+    </div>
 
     <div class="py-2 top border-bottom">
         <div class="container">
@@ -945,6 +997,13 @@
                     offset: '95%'
                 });
             }
+        });
+
+        $(window).on('load', function() {
+            setTimeout(function() {
+                // Tambahkan class untuk fade out
+                $('#loader-wrapper').addClass('loader-hide');
+            }, 3000); // 3000ms = 3 Detik
         });
     </script>
 
